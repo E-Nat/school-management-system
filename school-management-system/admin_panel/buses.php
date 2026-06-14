@@ -13,7 +13,7 @@
     <main>
         <div class="header">
             <div class="left">
-                <h1>Bus service</h1>
+                <h1>Bus services</h1>
                 <ul class="breadcrumb">
                     <li><a href="#">
                         </a></li>
