@@ -16,7 +16,7 @@
         <main>
             <div class="header">
                 <div class="left">
-                    <h1>Time Table</h1>
+                    <h1>Time Table :</h1>
                 </div>
             </div>
 
