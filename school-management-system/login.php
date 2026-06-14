@@ -56,7 +56,7 @@ if (isset($_SESSION['uid'])) {
       <div class="front">
         <img src="images/loginimage.jpg" alt="">
         <div class="text">
-          <span class="text-1">SCHOOL MANAGEMENT SYSTEM<br></span>
+          <span class="text-1">AUB SCHOOL MANAGEMENT<br></span>
           <span class="text-2">Plan serve program</span>
         </div>
       </div>
