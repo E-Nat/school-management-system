@@ -1,46 +1,106 @@
-name: Notifier
+name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
+      - develop
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
+      - develop
+  workflow_dispatch:
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
 
-  messageSlack:
-    runs-on: ubuntu-latest
     steps:
-    - name: Notification Slack
-      uses: rtCamp/action-slack-notify@v2
-      env:
-        SLACK_CHANNEL: ci
-        SLACK_TITLE: Post Title
-        SLACK_USERNAME: BotCI
-        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
-        SLACK_MESSAGE: "This is your custom message."
+      - name: Checkout
+        uses: actions/checkout@v4
 
-  notifyWhatsApp:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - name: Notification WhatsApp
-        id: whatsapp-notify
-        env:
-          account_sid: ${{ secrets.twilio_account_sid }}
-          auth_token: ${{ secrets.twilio_auth_token }}
-          to_whatsapp_no: ${{ secrets.twilio_to_whatsapp_no }}
-          message: "CI 👉🏻 Your message here..."
-        uses: khaled-ibtikar/whatsapp-push-notify-action@master
-        
-  notifyTelegram:
-    runs-on: ubuntu-latest
-    steps:
-    - name: send custom message
-      uses: appleboy/telegram-action@master
-      with:
-        to: ${{ secrets.TELEGRAM_TO }}
-        token: ${{ secrets.TELEGRAM_TOKEN }}
-        message: |
-          The ${{ github.event_name }} event triggered final step.
-          echo This event is a pull request that had an assignee removed.
+      # -----------------------
+      # Your CI/CD Steps Here
+      # -----------------------
+      - name: Build
+        run: |
+          echo "Building application..."
+          sleep 5
+
+      - name: Test
+        run: |
+          echo "Running tests..."
+          sleep 5
+
+      - name: Deploy
+        run: |
+          echo "Deploying application..."
+          sleep 5
+
+      # -----------------------
+      # Telegram Success
+      # -----------------------
+      - name: Telegram Success Notification
+        if: success()
+        uses: appleboy/telegram-action@master
+        with:
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          to: ${{ secrets.TELEGRAM_TO }}
+          format: markdown
+          message: |
+            🟢 *DEPLOYMENT SUCCESSFUL*
+
+            ━━━━━━━━━━━━━━━━━━━━
+            🏢 Repository: `${{ github.repository }}`
+            🌿 Branch: `${{ github.ref_name }}`
+            🔄 Event: `${{ github.event_name }}`
+            👤 Triggered By: `${{ github.actor }}`
+            ⚙️ Workflow: `${{ github.workflow }}`
+            🆔 Run ID: `${{ github.run_id }}`
+            🆔 Commit: `${{ github.sha }}`
+            ━━━━━━━━━━━━━━━━━━━━
+
+            📝 Commit Message:
+            `${{ github.event.head_commit.message }}`
+
+            🔗 Repository:
+            https://github.com/${{ github.repository }}
+
+            🔗 Commit:
+            https://github.com/${{ github.repository }}/commit/${{ github.sha }}
+
+            🔗 Workflow Run:
+            https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+            🚀 Status: Production deployment completed.
+
+      # -----------------------
+      # Telegram Failure
+      # -----------------------
+      - name: Telegram Failure Notification
+        if: failure()
+        uses: appleboy/telegram-action@master
+        with:
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          to: ${{ secrets.TELEGRAM_TO }}
+          format: markdown
+          message: |
+            🔴 *DEPLOYMENT FAILED*
+
+            ━━━━━━━━━━━━━━━━━━━━
+            🏢 Repository: `${{ github.repository }}`
+            🌿 Branch: `${{ github.ref_name }}`
+            🔄 Event: `${{ github.event_name }}`
+            👤 Triggered By: `${{ github.actor }}`
+            ⚙️ Workflow: `${{ github.workflow }}`
+            🆔 Run ID: `${{ github.run_id }}`
+            🆔 Commit: `${{ github.sha }}`
+            ━━━━━━━━━━━━━━━━━━━━
+
+            📝 Commit Message:
+            `${{ github.event.head_commit.message }}`
+
+            🔗 Workflow Run:
+            https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+            ❌ Status: Deployment failed. Please check the logs.
