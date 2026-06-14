@@ -15,7 +15,7 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Roll No.</th>
-                            <th scope="col">Name </th>
+                            <th scope="col">Name :</th>
                             <th scope="col">Obtained</th>
 
                         </tr>
