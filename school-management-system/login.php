@@ -39,7 +39,7 @@ if (isset($_SESSION['uid'])) {
 
 <head>
   <meta charset="UTF-8">
-  <title>School Management</title>
+  <title>School Management System</title>
   <!-- Fontawesome CDN Link -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -66,7 +66,7 @@ if (isset($_SESSION['uid'])) {
       <div class="form-content">
         <div class="login-form">
 
-          <div class="title" id='board-title'>Login</div>
+          <div class="title" id='board-title'>Register</div>
 
           <div class="alert-box">
             <div class="alert alert-danger text-center mt-3" role="alert" id="error-msg">
