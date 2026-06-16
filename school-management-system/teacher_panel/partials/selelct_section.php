@@ -1,3 +1,3 @@
-<option value="A">A</option>
-<option value="B">B</option>
-<option value="C">C</option>
+<option value="A">Morning</option>
+<option value="B">Afternoon</option>
+<option value="C">Evening</option>

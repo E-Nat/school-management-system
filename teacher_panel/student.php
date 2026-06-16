@@ -164,9 +164,9 @@
                                     <select class="form-select" id="section" name="section" style="width:100%;"
                                         required>
                                         <option selected disabled value="">--select--</option>
-                                        <option value="A">A</option>
-                                        <option value="B">B</option>
-                                        <option value="C">C</option>
+                                        <option value="A">Morning</option>
+                                        <option value="B">Afternoon</option>
+                                        <option value="C">Evening</option>
                                     </select>
                                     <div class="invalid-feedback">
                                         required!
@@ -270,11 +270,11 @@
                             <select class="form-select" aria-label="Default select example" id="state" name="state"
                                 required>
                                 <option selected disabled value="">--select--</option>
-                                <option value="Hariyana">Hariyana</option>
-                                <option value="UP">UP</option>
+                                <option value="Hariyana">Phnom Penh</option>
+                                <!-- <option value="UP">UP</option>
                                 <option value="Delhi">Delhi</option>
                                 <option value="Panjab">Panjab</option>
-                                <option value="Gujrat">Gujrat</option>
+                                <option value="Gujrat">Gujrat</option> -->
                             </select>
                             <div class="invalid-feedback">
                                 required!
