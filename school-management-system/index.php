@@ -12,7 +12,7 @@
               <div>
                 <div class="big-title">
                   <h1>Future is here,</h1>
-                  <h1>Start Exploring now.</h1>
+                  <h1>stop.</h1>
                 </div>
                 <p class="text">
                   streamline processes, manage resources, track student data, facilitate
