@@ -137,7 +137,7 @@ $id = $_SESSION['uid'];
                 <h3>Examination</h3>
             </a>
             <a href="workspace.php">
-                <span class="material-icons-sharp">description</span>
+                <span class="material-icons-sharp">descriptions</span>
                 <h3>Workspace</h3>
             </a>
             <a href="password.php">

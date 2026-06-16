@@ -51,17 +51,17 @@ jobs:
             🟢 *DEPLOYMENT SUCCESSFUL*
 
             ━━━━━━━━━━━━━━━━━━━━
-            🏢 Repository: `${{ github.repository }}`
-            🌿 Branch: `${{ github.ref_name }}`
-            🔄 Event: `${{ github.event_name }}`
-            👤 Triggered By: `${{ github.actor }}`
-            ⚙️ Workflow: `${{ github.workflow }}`
-            🆔 Run ID: `${{ github.run_id }}`
-            🆔 Commit: `${{ github.sha }}`
+            🏢 Repository: ${{ github.repository }}
+            🌿 Branch: ${{ github.ref_name }}
+            🔄 Event: ${{ github.event_name }}
+            👤 Triggered By: ${{ github.actor }}
+            ⚙️ Workflow: ${{ github.workflow }}
+            🆔 Run ID: ${{ github.run_id }}
+            🆔 Commit: ${{ github.sha }}
             ━━━━━━━━━━━━━━━━━━━━
 
             📝 Commit Message:
-            `${{ github.event.head_commit.message }}`
+            ${{ github.event.head_commit.message }}
 
             🔗 Repository:
             https://github.com/${{ github.repository }}
@@ -88,17 +88,17 @@ jobs:
             🔴 *DEPLOYMENT FAILED*
 
             ━━━━━━━━━━━━━━━━━━━━
-            🏢 Repository: `${{ github.repository }}`
-            🌿 Branch: `${{ github.ref_name }}`
-            🔄 Event: `${{ github.event_name }}`
-            👤 Triggered By: `${{ github.actor }}`
-            ⚙️ Workflow: `${{ github.workflow }}`
-            🆔 Run ID: `${{ github.run_id }}`
-            🆔 Commit: `${{ github.sha }}`
+            🏢 Repository: ${{ github.repository }}
+            🌿 Branch: ${{ github.ref_name }}
+            🔄 Event: ${{ github.event_name }}
+            👤 Triggered By: ${{ github.actor }}
+            ⚙️ Workflow: ${{ github.workflow }}
+            🆔 Run ID: ${{ github.run_id }}
+            🆔 Commit: ${{ github.sha }}
             ━━━━━━━━━━━━━━━━━━━━
 
             📝 Commit Message:
-            `${{ github.event.head_commit.message }}`
+            ${{ github.event.head_commit.message }}
 
             🔗 Workflow Run:
             https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
