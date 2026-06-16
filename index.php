@@ -2,40 +2,73 @@
 <?php include('shared/_header.php'); ?>
 
 <style>
-body{
-    background:#f8fafc;
-    font-family:Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root{
+    --primary:#4f46e5;
+    --secondary:#7c3aed;
+    --dark:#0f172a;
+    --gray:#64748b;
+    --light:#f8fafc;
 }
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:
+    radial-gradient(circle at top left,#a5b4fc 0%,transparent 30%),
+    radial-gradient(circle at bottom right,#d8b4fe 0%,transparent 30%),
+    #f8fafc;
+    overflow-x:hidden;
+}
+
+/* HERO */
+
 .hero-section{
-    min-height:90vh;
+    min-height:100vh;
     display:flex;
     align-items:center;
-    padding:80px 0;
+    padding:100px 0;
 }
 
 .hero-badge{
     display:inline-block;
-    padding:10px 20px;
-    background:#eef2ff;
-    color:#4f46e5;
+    padding:12px 22px;
+    background:rgba(79,70,229,.1);
+    color:var(--primary);
     border-radius:50px;
     font-weight:600;
     margin-bottom:25px;
+    backdrop-filter:blur(10px);
 }
 
 .hero-title{
-    font-size:4rem;
-    font-weight:800;
-    line-height:1.1;
-    color:#4f46e5;
+    font-size:5rem;
+    font-weight:900;
+    line-height:1.05;
+
+    background:
+    linear-gradient(
+        135deg,
+        #4338ca,
+        #7c3aed
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
 .hero-subtitle{
-    margin-top:20px;
-    color:#64748b;
-    font-size:1.1rem;
-    line-height:1.8;
+    font-size:1.15rem;
+    line-height:1.9;
+    color:var(--gray);
+    margin-top:25px;
+    max-width:600px;
 }
 
 .hero-buttons{
@@ -45,87 +78,209 @@ body{
 }
 
 .btn-primary-custom{
-    background:linear-gradient(135deg,#4f46e5,#7c3aed);
-    color:white;
-    padding:15px 30px;
-    border-radius:15px;
+    background:
+    linear-gradient(
+        135deg,
+        #4f46e5,
+        #7c3aed
+    );
+
+    color:#fff;
     text-decoration:none;
-    font-weight:600;
+    padding:16px 32px;
+    border-radius:18px;
+    font-weight:700;
+
+    box-shadow:
+    0 15px 35px rgba(79,70,229,.3);
+
+    transition:.3s;
 }
 
 .btn-primary-custom:hover{
-    color:white;
-    opacity:.9;
+    transform:
+    translateY(-3px)
+    scale(1.02);
+
+    color:#fff;
 }
 
 .btn-secondary-custom{
-    background:white;
-    border:1px solid #ddd;
-    color:#111;
-    padding:15px 30px;
-    border-radius:15px;
+    background:#fff;
+    border:1px solid #e5e7eb;
+    color:#111827;
     text-decoration:none;
-    font-weight:600;
+    padding:16px 32px;
+    border-radius:18px;
+    font-weight:700;
 }
 
 .hero-image{
     width:100%;
-    max-width:550px;
-    border-radius:25px;
-    box-shadow:0 25px 50px rgba(0,0,0,.15);
-    margin-top:40px;
+    max-width:620px;
+
+    border-radius:35px;
+
+    box-shadow:
+    0 35px 80px rgba(79,70,229,.25);
+
+    animation:float 5s ease-in-out infinite;
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-15px);
+}
+
+100%{
+transform:translateY(0);
+}
+
 }
 
 .hero-stats{
     display:flex;
     gap:20px;
-    margin-top:40px;
+    margin-top:50px;
 }
 
 .stat-card{
-    background:white;
-    padding:20px;
-    border-radius:20px;
-    box-shadow:0 10px 20px rgba(0,0,0,.08);
-    min-width:120px;
+    background:
+    rgba(255,255,255,.75);
+
+    backdrop-filter:blur(15px);
+
+    border:
+    1px solid rgba(255,255,255,.5);
+
+    padding:22px;
+    border-radius:24px;
+
+    min-width:140px;
+
+    box-shadow:
+    0 15px 30px rgba(0,0,0,.05);
 }
 
 .stat-card h3{
-    margin:0;
-    color:#4f46e5;
+    color:var(--primary);
+    font-weight:800;
 }
 
 .stat-card span{
-    color:#64748b;
+    color:var(--gray);
 }
+
+/* FEATURES */
+
+.features{
+    padding:100px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:3rem;
+    font-weight:800;
+    color:var(--dark);
+}
+
+.section-title p{
+    color:var(--gray);
+}
+
+.feature-card{
+    background:#fff;
+
+    border-radius:30px;
+
+    padding:35px;
+
+    height:100%;
+
+    transition:.3s;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.05);
+}
+
+.feature-card:hover{
+    transform:translateY(-10px);
+}
+
+.feature-icon{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.feature-card h4{
+    font-weight:700;
+}
+
+/* CAROUSEL */
 
 .carousel-box{
     margin-top:80px;
+    margin-bottom:80px;
 }
 
 .carousel-inner{
-    border-radius:25px;
+    border-radius:35px;
     overflow:hidden;
+
+    box-shadow:
+    0 25px 70px rgba(0,0,0,.12);
 }
 
 .carousel-item img{
-    height:550px;
+    height:650px;
     object-fit:cover;
 }
 
-@media(max-width:768px){
+/* TRUSTED */
 
-    .hero-title{
-        font-size:2.5rem;
-    }
+.trusted{
+    padding:80px 0;
+}
 
-    .hero-stats{
-        flex-direction:column;
-    }
+.company{
+    font-size:1.4rem;
+    font-weight:700;
+    color:#94a3b8;
+}
 
-    .hero-image{
-        margin-top:30px;
-    }
+/* MOBILE */
+
+@media(max-width:991px){
+
+.hero-title{
+font-size:3rem;
+}
+
+.hero-stats{
+flex-direction:column;
+}
+
+.hero-buttons{
+flex-direction:column;
+}
+
+.hero-image{
+margin-top:50px;
+}
+
+.carousel-item img{
+height:350px;
+}
+
 }
 </style>
 
@@ -144,7 +299,7 @@ body{
 <div class="col-lg-6">
 
 <span class="hero-badge">
-Modern School Management System
+Modern School Management Platform
 </span>
 
 <h1 class="hero-title">
@@ -153,8 +308,8 @@ Smart Education Starts Here
 
 <p class="hero-subtitle">
 Manage students, teachers, attendance, grades,
-courses and communication from one modern platform.
-Built for schools that want efficiency and growth.
+courses and communication from one intelligent platform
+built for modern schools and educational institutions.
 </p>
 
 <div class="hero-buttons">
@@ -164,7 +319,7 @@ Get Started
 </a>
 
 <a href="#features" class="btn-secondary-custom">
-Learn More
+Explore Features
 </a>
 
 </div>
@@ -204,13 +359,96 @@ Learn More
 
 </section>
 
-<div id="features">
-<?php include('shared/feature-cards.php'); ?>
+<section class="trusted">
+
+<div class="container text-center">
+
+<p class="text-muted mb-4">
+Trusted by Schools & Institutions
+</p>
+
+<div class="d-flex justify-content-center gap-5 flex-wrap">
+
+<div class="company">🏫 School One</div>
+<div class="company">🏫 School Two</div>
+<div class="company">🏫 School Three</div>
+<div class="company">🏫 School Four</div>
+
 </div>
 
-<div class="container mt-5">
-<hr>
 </div>
+
+</section>
+
+<section class="features" id="features">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Powerful Features</h2>
+
+<p>
+Everything you need to manage your school efficiently.
+</p>
+
+</div>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+
+<div class="feature-card">
+
+<div class="feature-icon">🎓</div>
+
+<h4>Student Management</h4>
+
+<p>
+Manage student profiles, records and performance easily.
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="feature-card">
+
+<div class="feature-icon">👨‍🏫</div>
+
+<h4>Teacher Portal</h4>
+
+<p>
+Attendance, grading and academic management tools.
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="feature-card">
+
+<div class="feature-icon">📈</div>
+
+<h4>Analytics & Reports</h4>
+
+<p>
+Generate detailed reports and insights instantly.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
 
 <div class="container carousel-box">
 
@@ -241,21 +479,17 @@ Learn More
 </div>
 
 <button class="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselExample"
-        data-bs-slide="prev">
-
+type="button"
+data-bs-target="#carouselExample"
+data-bs-slide="prev">
 <span class="carousel-control-prev-icon"></span>
-
 </button>
 
 <button class="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselExample"
-        data-bs-slide="next">
-
+type="button"
+data-bs-target="#carouselExample"
+data-bs-slide="next">
 <span class="carousel-control-next-icon"></span>
-
 </button>
 
 </div>
@@ -267,3 +501,4 @@ Learn More
 </main>
 
 <?php include('shared/_footer.php'); ?>
+
