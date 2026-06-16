@@ -556,21 +556,8 @@
                                     <div class="col-auto">
                                         <select class="form-select" aria-label="Default select example"
                                             id="search-class">
-                                            <!-- <option selected>12</option>
-                                            <option>11</option>
-                                            <option>10</option>
-                                            <option>9</option>
-                                            <option>8</option>
-                                            <option>7</option>
-                                            <option>6</option>
-                                            <option>5</option>
-                                            <option>4</option>
-                                            <option>3</option>
-                                            <option>2</option>
-                                            <option>1</option>
-                                            <option>pg</option>
-                                            <option>lkg</option>
-                                            <option>ukg</option> -->
+                                            <!-- <option selected>12</option>-->
+                                            
                                             <?php include('partials/select_classes.php') ?>
                                         </select>
                                     </div>
@@ -587,9 +574,9 @@
                                     <div class="col-auto">
                                         <select class="form-select" aria-label="Default select example"
                                             id="search-section">
-                                            <option selected>A</option>
-                                            <option>B</option>
-                                            <option>C</option>
+                                            <option selected>Morning</option>
+                                            <option>Afternoon</option>
+                                            <option>Evening</option>
                                         </select>
                                     </div>
                                 </div>
