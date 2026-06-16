@@ -95,7 +95,7 @@
         <!-- End of Insights -->
 
         <div class="bottom-data">
-            <div class="orders">
+            <!-- <div class="orders">
                 <div class="header">
                     <i class='bx bx-receipt'></i>
                     <h3 id="text-heading">Latest Notices</h3>
@@ -117,7 +117,7 @@
                    
                     </tbody>
                 </table>
-            </div>
+            </div> -->
 
             <!-- Reminders -->
             <div class="reminders">
