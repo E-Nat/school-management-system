@@ -15,7 +15,7 @@
         <ul>
           <li><a href="./index.php">Home</a></li>
           <li><a href="./about-us.php">About-us</a></li>
-          <li><a href="./login.php" class="btn">Login</a></li>
+          <li><a href="./login.php" class="btn" style="background-color: #007bff; color: white;">Login</a></li>
         </ul>
 
 
